@@ -1,0 +1,6 @@
+export const SET_THEME = 'SET_THEME'
+export const SET_ALERT = 'SET_ALERT'
+export const SET_PAGE_TITLE = 'SET_PAGE_TITLE'
+export const SET_LOADING = 'SET_LOADING'
+export const SET_SIDEBAR = 'SET_SIDEBAR'
+export const SET_ANIMATE = 'SET_ANIMATE'
