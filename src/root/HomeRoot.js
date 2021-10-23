@@ -31,7 +31,7 @@ const HomeRoot = ({history}) =>{
 
     return (
         <div className="h-full bg-bluegray-100 dark:bg-mainbg text-white flex">
-            <Sidebar />
+            {/* <Sidebar /> */}
             <div className="w-full flex flex-col h-full">
                 {/* <Topbar /> */}
                 <FlowText text="topdar"/>

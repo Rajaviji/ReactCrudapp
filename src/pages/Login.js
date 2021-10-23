@@ -1,18 +1,9 @@
 import { setLoggedIn } from '../store/auth/actions'
-import Button from '../components/Button'
-import { PopInAnim, TextAnimateXRev, TextAnimateY, wrapPopAnim } from '../commons/anims'
-import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import BgImage from '../assets/undraw_Personal_notebook_re_d7dc.svg'
-import TextField from '../components/TextField'
-import { FaUserAlt, FaLock } from 'react-icons/fa'
-import FlowText from '../components/FlowText'
-import DarkModeSwitch from '../components/DarkModeSwitch'
 import { useHistory } from 'react-router'
 import * as boot from 'react-bootstrap'
 import {useFormik} from 'formik'
-import API from '../axios/API'
 import axios from 'axios'
 
 // const styles = {
@@ -48,7 +39,10 @@ const Login = () => {
              },
              onSubmit: values => {
                 axios.post('http://localhost:8080/api/authenticate',values).then(res=>{
-                    console.log(res)
+                if(res.status ===200){
+                    localStorage.setItem('token',res.data.id_token)
+                    history.push('/')
+                }
                 })
              },
            });
